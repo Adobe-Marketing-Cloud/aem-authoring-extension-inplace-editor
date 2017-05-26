@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        editorType="image">
+        <config jcr:primaryType="nt:unstructured">
+            <plugins jcr:primaryType="nt:unstructured">
+                <crop
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <aspectRatios jcr:primaryType="nt:unstructured">
+                        <tv
+                            jcr:primaryType="nt:unstructured"
+                            name="4:3"
+                            ratio="0.75"/>
+                        <_x0033_5mm
+                            jcr:primaryType="nt:unstructured"
+                            name="35mm"
+                            ratio="0.6666"/>
+                        <_x0031_6_9
+                            jcr:primaryType="nt:unstructured"
+                            name="16:9"
+                            ratio="0.5625"/>
+                    </aspectRatios>
+                </crop>
+                <flip
+                    jcr:primaryType="nt:unstructured"
+                    features="horizontal"/>
+                <map
+                    jcr:primaryType="nt:unstructured"
+                    features="launch,unlaunch,confirm,rectangle"/>
+                <rotate
+                    jcr:primaryType="nt:unstructured"
+                    features="-"/>
+                <zoom
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+            </plugins>
+            <ui jcr:primaryType="nt:unstructured">
+                <inline
+                    jcr:primaryType="nt:unstructured"
+                    toolbar="[history#undo,history#redo,fullscreen#fullscreen,control#close,control#finish]">
+                    <replacementToolbars
+                        jcr:primaryType="nt:unstructured"
+                        crop="[\0]"/>
+                </inline>
+                <fullscreen jcr:primaryType="nt:unstructured">
+                    <toolbar
+                        jcr:primaryType="nt:unstructured"
+                        left="[crop#launchwithratio,rotate#right,map#launch,flip#horizontal,zoom#reset100,zoom#popupslider]"
+                        right="[history#undo,history#redo,fullscreen#fullscreenexit]"/>
+                    <replacementToolbars jcr:primaryType="nt:unstructured">
+                        <crop
+                            jcr:primaryType="nt:unstructured"
+                            left="[crop#identifier]"
+                            right="[crop#unlaunch,crop#confirm]"/>
+                        <map
+                            jcr:primaryType="nt:unstructured"
+                            left="[map#rectangle]"
+                            right="[map#unlaunch,map#confirm]"/>
+                    </replacementToolbars>
+                </fullscreen>
+            </ui>
+        </config>
+    </cq:inplaceEditing>
+</jcr:root>
